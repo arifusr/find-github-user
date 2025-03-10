@@ -48,11 +48,17 @@ export const UseGetUsers = () => {
                 }
             }
             const token = localStorage.getItem('token')
-            const response = await fetch(`https://api.github.com/search/users?q=${query}&per_page=${perPage}&page=${pageParam}`, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            })
+            let response
+            if(token){
+                response = await fetch(`https://api.github.com/search/users?q=${query}&per_page=${perPage}&page=${pageParam}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+            }else{
+                response = await fetch(`https://api.github.com/search/users?q=${query}&per_page=${perPage}&page=${pageParam}`)
+            }
+             
             const resp = await response.json();
             return resp
         },

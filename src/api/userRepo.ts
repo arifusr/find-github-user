@@ -14,11 +14,16 @@ export const UseGetUsersRepo = (login: string) => {
         queryKey: ["repo", { login }],
         queryFn: async () => {
             const token = localStorage.getItem('token')
-            const response = await fetch(`https://api.github.com/users/${login}/repos`, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
+            let response
+            if(token){
+                response = await fetch(`https://api.github.com/users/${login}/repos`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+            }else{
+                response = await fetch(`https://api.github.com/users/${login}/repos`);
+            }
             return response.json();
         },
     });
