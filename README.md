@@ -1,54 +1,37 @@
-# React + TypeScript + Vite
+# Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application that utilizes infinite scroll pagination and lazy loading with skeleton components to provide a seamless user experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Infinite scroll pagination**: The application loads new data as the user scrolls down the page, providing an infinite scrolling experience.
+- **Lazy loading**: The application only loads the necessary data when it is needed, reducing the amount of data that needs to be loaded upfront.
+- **Skeleton components**: The application uses skeleton components to provide a placeholder for the data that is being loaded, giving the user a sense of what is to come.
 
-## Expanding the ESLint configuration
+## Technology Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React**: The application is built using React, a popular JavaScript library for building user interfaces.
+- **React Router**: The application uses React Router to manage client-side routing.
+- **GitHub API**: The application uses the GitHub API to fetch data.
+- **HeroUI**: Beautiful, fast and modern React UI library for building accessible and customizable web applications.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Installation
+
+To install the application, run the following command:
+
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Usage
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+pnpm dev
 ```
+
+## Live
+You can access live version of this app on https://arifusr.github.io/find-github-user/
+
+## Contributing
+Contributions are welcome! If you would like to contribute to the project, please fork the repository and submit a pull request.
