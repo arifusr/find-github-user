@@ -17,7 +17,7 @@ createRoot(document.getElementById('root')!).render(
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<App />} />
+            <Route path="/find-github-user" element={<App />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>
